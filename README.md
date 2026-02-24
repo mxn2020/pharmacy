@@ -1,65 +1,94 @@
 # Pharmacy Management System
 
-## Pages & Features
+Pharmacy inventory, prescriptions, and sales management.
 
-### 1. Dashboard
-- Daily sales summary
-- Low-stock & expiring-soon alerts
-- Prescriptions to fill count
-- Revenue chart (daily / weekly / monthly)
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Point of Sale (POS)
-- Quick product search & barcode scanning
-- Add items to cart with quantity
-- Apply discounts & coupons
-- Payment processing (cash, card)
-- Print / email receipt
-- Prescription-linked sale
+## Tech Stack
 
-### 3. Inventory
-- Product catalog: name, generic name, brand, category, dosage form
-- Current stock levels per product
-- Batch & expiry date tracking
-- Low-stock alerts with reorder suggestions
-- Stock audit / adjustment
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Prescriptions
-- Enter / scan prescriptions
-- Link prescription to patient profile
-- Dispense tracking (partial / full)
-- Refill management & reminders
-- Prescription history per patient
+## Getting Started
 
-### 5. Suppliers & Purchasing
-- Supplier directory with contact info
-- Create purchase orders
-- Receive & verify deliveries against PO
-- Track payment to suppliers
-- Price comparison by supplier
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Customers / Patients
-- Customer registry with contact & insurance info
-- Purchase history per customer
-- Allergy & drug interaction alerts
-- Loyalty points tracking
+## License
 
-### 7. Returns & Expiry
-- Process customer returns
-- Expired product quarantine list
-- Write-off expired stock
-- Return-to-supplier workflow
+MIT © Mehdi Nabhani
 
-### 8. Reports
-- Sales by product, category, period
-- Profit margin analysis
-- Expiry loss report
-- Controlled substance log
-- Tax summary
-- Export as PDF / CSV
+---
 
-### 9. Settings
-- Pharmacy profile & license info
-- Tax rate configuration
-- Receipt template customization
-- Alert thresholds (low stock, expiry days)
-- User roles & permissions
+<details>
+<summary>📋 Original Feature Spec</summary>
+
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
